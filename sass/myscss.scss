@@ -1,0 +1,488 @@
+/** * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/) * http://cssreset.com */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+////////////under here my codes
+
+@import "compass";
+@import "compass/utilities/";
+@import "compass/utilities/general/clearfix";
+.clearfix {
+  @include clearfix;
+}
+
+$page-width: 1280px;
+$aside-width: 440px;
+$grey1: #999999;
+$grey2: #D2D2D2;
+$grey3: #B7B7B7;
+$grey4: #5D5D5D;
+$grey-ad: #A0A0A0;
+$light-grey1: #CCCCCC;
+$text-color1: #656565;
+
+.container {
+  .header {
+    width: $page-width;
+    height: 200px;
+    margin: 0 auto;
+    background-color: #A0A0A0;
+
+    h1 {
+      text-align: center;
+      padding-top: 80px;
+    }
+  }
+  .global-nav {
+    .global-nav__items {
+      width: $page-width;
+      margin: 0 auto;
+      .global-nav__item {
+        &:nth-child(odd) {
+          background-color: $grey2;
+        }
+        &:nth-child(even) {
+          background-color: $grey3;
+        }
+        float: left;
+        width: 256px;
+        height: 100px;
+        text-align: center;
+        a {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          top: 34px;
+          left: 3px;
+
+          text-decoration: none;
+
+          color: $text-color1;
+        }
+
+      }
+    }
+  }
+  .bread-crumbs {
+    display: block;
+    height: 40px;
+    margin: 0 auto;
+    background-color: $grey4;
+
+    .bread-crumbs__items {
+      .bread-crumbs__item {
+        float: left;
+        margin-left: 15px;
+
+        a{
+          position: relative;
+          top: 5px;
+          text-decoration: none;
+          color:white;
+        }
+      }
+    }
+  }
+  .top-ads {
+    width: $page-width;
+    margin: 0 auto;
+
+    background-color: $light-grey1;
+
+    .top-ads__items {
+      display: block;
+      width: $page-width;
+
+      .top-ads__item {
+        float: left;
+        margin-left: 20px;
+        padding: 20px 0;
+
+      }
+    }
+  }
+
+  .body {
+    width: $page-width;
+    margin: 0 auto;
+    .main {
+      width: $page-width - $aside-width;
+      float: right;
+      .main-header {
+        h2 {
+          font-size: 39px;
+          padding: 20px;
+          padding-left: 40px;
+          border-bottom: 1px solid $grey4;
+
+        }
+      }
+      .article {
+        background-color: #DDDDDD;
+        .article__strong {
+          font-weight: bold;
+        }
+        .article__title {
+          padding-left: 40px;
+          padding-top: 10px;
+          font-size: 31px;
+        }
+        .article__paragraph {
+          width: 780px;
+          margin-top: 20px;
+          padding-left: 40px;
+          font-size: 18px;
+          line-height: 28px;
+        }
+        h4 {
+          margin-top: 20px;
+          margin-bottom: 10px;
+          padding-left: 40px;
+
+        }
+        .article__unorder-list {
+          list-style-type: disc;
+          font-size: 18px;
+          margin-top: 20px;
+          padding-left: 60px;
+          .article__unorder-list-item {
+            line-height: 25px;
+            margin-top: 10px;
+
+          }
+        }
+        .article__blockquote {
+          width: 700px;
+          margin-top: 60px;
+          margin-bottom: 60px;
+          padding-left: 80px;
+          font-size: 18px;
+          line-height: 28px;
+
+        }
+        .article__image {
+          width: 800px;
+          margin: 20px;
+
+        }
+        h5 {
+          font-size: 30px;
+          color: $text-color1;
+          margin-left: 30px;
+
+        }
+        .article__order-list {
+          list-style-type: decimal;
+          font-size: 18px;
+          margin-top: 20px;
+          padding-left: 70px;
+          padding-bottom: 50px;
+          .article__order-list-item {
+            line-height: 25px;
+            margin-top: 10px;
+
+          }
+        }
+      }
+      .form {
+        .form__title {
+          font-size: 30px;
+          color: $text-color1;
+          margin: 30px;
+        }
+        .form-item {
+          text-align: right;
+          margin-right: 20px;
+
+        }
+
+        .form-item__label {
+          font-size: 25px;
+          font-weight: bold;
+
+        }
+        input[name=example1], input[name=example2] {
+          width: 580px;
+          height: 40px;
+          margin-bottom: 20px;
+          border-radius: 5px;
+        }
+        textarea {
+          width: 580px;
+          height: 400px;
+          margin-bottom: 20px;
+          border-radius: 5px;
+        }
+
+        .form-item__inline-item {
+          display: inline-block;
+          width: 150px;
+          height: 50px;
+          border-radius: 5px;
+          background-color: #EEEEEE;
+          border: 1px solid #EEEEEE;
+
+        }
+
+        .form-item:nth-child(4){
+          .form-item__label {
+            position: relative;
+            top:-400px;
+          }
+        }
+        .form-item:nth-child(5){
+          .form-item__label {
+            position: relative;
+            left: -600px;
+          }
+          .form-item__inline-item{
+            margin-top: 20px;
+            margin-right: 20px;
+            position: relative;
+            top: -40px;
+            left: -60px;
+          }
+        }
+        .form-item:nth-child(6){
+          .form-item__label {
+            position: relative;
+            left: -600px;
+          }
+          .form-item__inline-item{
+            margin-top: 20px;
+            margin-right: 20px;
+            position: relative;
+            top: -40px;
+            left: -60px;
+          }
+        }
+        .form-item:nth-child(7){
+          .form-item__label {
+            position: relative;
+            left: -600px;
+          }
+          select{
+            position: relative;
+            top:-30px;
+            width: 580px;
+            height: 40px;
+            background-color: $grey1;
+
+          }
+        }
+        .form-item:nth-child(8){
+          margin-top: 20px;
+          .form-item__label {
+            position: relative;
+            top: -100px;
+          }
+          select{
+            position: relative;
+            top:-30px;
+            width: 580px;
+            height:100px;
+            background-color: $grey3;
+
+          }
+        }
+        .form-item:nth-child(9){
+          margin-top: 20px;
+          .form-item__label {
+            position: relative;
+            top: -20px;
+          }
+          input[type=file]{
+            position: relative;
+            top:-30px;
+            width: 580px;
+            height:30px;
+            background-color: $grey3;
+            border-radius: 5px;
+
+          }
+        }
+        .form-item:nth-child(10){
+          margin-top: 20px;
+          .form-item__label {
+            position: relative;
+            left:-600px;
+          }
+          .form-item__actions-item{
+            input[type=submit]{
+              position: relative;
+              top:-30px;
+              left:-330px;
+
+              width: 250px;
+              height:50px;
+              background-color: $grey4;
+
+              border-radius: 5px;
+            }
+
+            input[type=reset]{
+              position: relative;
+              top:-80px;
+              left:-50px;
+
+              width: 250px;
+              height:50px;
+              background-color: $grey2;
+              border-radius: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .aside {
+    float: right;
+
+    width: $aside-width;
+    height: 1800px;
+    background-color: $grey4;
+
+    .aside-ads {
+      .aside-ads__items {
+        padding: 60px;
+        .aside-ads__item {
+          margin-bottom: 20px;
+
+        }
+      }
+    }
+    .local-nav {
+      width: $aside-width;
+      margin: 20px 0;
+      background-color: $grey1;
+      .local-nav__items {
+        .local-nav__item {
+          border-bottom: 1px solid $grey4;
+          a {
+            width: 100%;
+
+            height: 100%;
+            padding-left: 80px;
+            text-decoration: none;
+            color: white;
+            font-size: 20px
+          }
+
+        }
+
+      }
+    }
+  }
+  .footer {
+    width: $page-width;
+    margin: 0 auto;
+    background-color: #444444;
+    height: 500px;
+
+    .footer-nav {
+      float: left;
+      position: relative;
+      left: 30px;
+
+      .footer-nav__items {
+        float: left;
+        margin-right: 50px;
+        margin-top: 20px;
+
+        .footer-nav__item {
+          a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            margin-bottom: 5px;
+          }
+
+        }
+      }
+    }
+    .about-author {
+      color: #8F8F8F;
+      float: right;
+      position: relative;
+      top: 30px;
+      left: -20px;
+      border-radius: 5px;
+
+      display: block;
+      width: 630px;
+      height: 350px;
+      background-color: #CCCCCC;
+      .about-author__title {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 10px;
+
+      }
+      img {
+        width: 120px;
+        border-radius: 50%;
+        padding-left: 20px;
+
+      }
+      .about-author__descriptions {
+        position: relative;
+        top: -90px;
+
+        left: 160px;
+        font-size: 20px;
+        color: #8F8F8F;
+        width: 350px;
+        .about-author__description {
+          position: relative;
+          top:-20px;
+          left:100px;
+
+        }
+      }
+    }
+
+    .footer-copyright {
+      position: relative;
+      left: 120px;
+      top: 440px;
+      text-align: center;
+      color: white;
+      font-size: 15px;
+
+    }
+  }
+}
